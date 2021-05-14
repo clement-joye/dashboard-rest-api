@@ -1,0 +1,8 @@
+@media (min-width:35em) {
+    .card-deck > .card
+    {
+        width: 30%;
+        flex-wrap: wrap;
+        flex: initial;
+    }
+}

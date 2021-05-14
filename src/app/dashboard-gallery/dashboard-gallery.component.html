@@ -1,0 +1,30 @@
+<div class="container__banner">
+    <div class="container">
+        <div class="m-auto row justify-content-md-left py-4">
+            <div class="w-100 border-bottom border-dark fw-bold">
+                <h1>{{ title }}</h1>
+            </div>
+        </div>
+        <div class="m-auto">
+            <div *ngFor="let card of cards; let i = index;" class="card border m-2 w-auto">
+                <div class="row g-0 bg-light text-dark">
+                    <div class="col-md-2 d-flex justify-content-center align-items-center {{ card.variables['status'] | DashboardStylePipe }}">
+                        <a href="{{card.variables['webUrl']}}" target="_blank" rel="noopener" class="d-block text-reset text-decoration-none fw-bolder"><fa-icon [icon]="card.variables['status'] | DashboardStatusPipe"></fa-icon></a>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title text-center fw-bolder mb-0">{{ card.family }} - <span class="card-subtitle mb-2 text-center fw-bolder">{{ card.name }}</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center align-items-center reload">
+                        <div class="zoom" (click)="reloadCard(card)" data-toggle="tooltip" title="Reload">
+                            <fa-icon *ngIf="!card.isLoading" [icon]="faSyncAlt"></fa-icon>
+                            <span *ngIf="card.isLoading" class="spinner-border spinner-border-sm mx-2" role="status"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="d-block pb-3 my-4 border-top border-dark"></span>
+    </div>
+</div>
