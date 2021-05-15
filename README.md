@@ -1,6 +1,8 @@
 # dashboard-rest-api
 An angular dashboard querying the rest API of different CI provider to monitor pipelines. 
 
+![image](https://user-images.githubusercontent.com/57441858/118363188-802a2e00-b593-11eb-9c04-0c9d50ad3ed7.png)
+
 # Requirements
 
 Node v14.15.x or later
